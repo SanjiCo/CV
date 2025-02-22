@@ -18,7 +18,7 @@ Bu repository, İsmail Çakıl'ın profesyonel CV'sini içeren statik bir web si
 ## Kullanım
 1. Repository'yi klonlayın:
    ```bash
-   git clone https://github.com/ismailcakil/cv-sitesi.git
+   git clone https://github.com/SanjiCo/CV.git
    ```
 2. `index.html` dosyasını düzenleyerek kendi bilgilerinizi ekleyin.
 3. Değişiklikleri GitHub'a push edin:
@@ -30,15 +30,15 @@ Bu repository, İsmail Çakıl'ın profesyonel CV'sini içeren statik bir web si
 
 ## GitHub Pages
 Site otomatik olarak GitHub Pages'te yayınlanır. Siteyi görüntülemek için:
-[https://ismailcakil.github.io/cv-sitesi](https://ismailcakil.github.io/cv-sitesi)
+[https://SanjiCo.github.io/CV](https://SanjiCo.github.io/CV)
 
 ## Katkıda Bulunma
 Eğer bu projeye katkıda bulunmak isterseniz:
-1. Repository'yi fork edin.
+1. Repository'yi fork edin: [https://github.com/SanjiCo/CV/fork](https://github.com/SanjiCo/CV/fork)
 2. Yeni bir branch oluşturun (`git checkout -b feature/AmazingFeature`).
 3. Değişikliklerinizi commit edin (`git commit -m 'Add some AmazingFeature'`).
 4. Branch'inizi push edin (`git push origin feature/AmazingFeature`).
-5. Pull request açın.
+5. Pull request açın: [https://github.com/SanjiCo/CV/pulls](https://github.com/SanjiCo/CV/pulls)
 
 ## Lisans
 Bu proje MIT lisansı altında lisanslanmıştır - detaylar için [LICENSE](LICENSE) dosyasına bakın.
