@@ -286,6 +286,8 @@
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -386,14 +388,11 @@
                 <a href="mailto:i.cakil53@gmail.com">
                     <i class="fas fa-envelope"></i> E-posta Gönder
                 </a>
-                <a href="https://example.com/path/to/cv.pdf" download>
+                <a href="#" id="download-pdf">
                     <i class="fas fa-file-pdf"></i> CV'mi İndir (PDF)
                 </a>
                 <a href="https://medium.com/@ismailcakil" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-medium"></i> Medium Yazılarım
-                </a>
-                <a href="https://twitter.com/ismailcakil" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-twitter"></i> Twitter Profilim
                 </a>
                 <a href="https://wa.me/905541300253" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-whatsapp"></i> WhatsApp
@@ -405,5 +404,35 @@
             <p>© 2023 İsmail Çakıl</p>
         </footer>
     </div>
+
+    <script>
+        document.getElementById('download-pdf').addEventListener('click', function() {
+            // Sayfanın tamamını yakala
+            html2canvas(document.querySelector(".container")).then(canvas => {
+                const imgData = canvas.toDataURL('image/png');
+                const pdf = new jspdf.jsPDF('p', 'mm', 'a4');
+                const imgWidth = 210; // A4 kağıt genişliği (mm)
+                const pageHeight = 295; // A4 kağıt yüksekliği (mm)
+                const imgHeight = canvas.height * imgWidth / canvas.width;
+                let heightLeft = imgHeight;
+                let position = 0;
+
+                // PDF'e resmi ekle
+                pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                heightLeft -= pageHeight;
+
+                // Birden fazla sayfa gerekirse
+                while (heightLeft >= 0) {
+                    position = heightLeft - imgHeight;
+                    pdf.addPage();
+                    pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                    heightLeft -= pageHeight;
+                }
+
+                // PDF'i indir
+                pdf.save('ismail-cakil-cv.pdf');
+            });
+        });
+    </script>
 </body>
 </html> 
