@@ -245,7 +245,47 @@
                 color: #f3f4f6;
             }
         }
+
+        .links-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .links-container a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            background-color: var(--background-color);
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .links-container a:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .links-container a i {
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .links-container {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
@@ -332,6 +372,33 @@
         <section class="section driving-license">
             <h3>Ehliyet</h3>
             <p>A Sınıfı, B Sınıfı</p>
+        </section>
+
+        <section class="section links">
+            <h3>Faydalı Bağlantılar</h3>
+            <div class="links-container">
+                <a href="https://www.linkedin.com/in/ismailcakil" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin"></i> LinkedIn Profilim
+                </a>
+                <a href="https://github.com/ismailcakil" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i> GitHub Profilim
+                </a>
+                <a href="mailto:i.cakil53@gmail.com">
+                    <i class="fas fa-envelope"></i> E-posta Gönder
+                </a>
+                <a href="https://example.com/path/to/cv.pdf" download>
+                    <i class="fas fa-file-pdf"></i> CV'mi İndir (PDF)
+                </a>
+                <a href="https://medium.com/@ismailcakil" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-medium"></i> Medium Yazılarım
+                </a>
+                <a href="https://twitter.com/ismailcakil" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-twitter"></i> Twitter Profilim
+                </a>
+                <a href="https://wa.me/905541300253" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+            </div>
         </section>
 
         <footer>
