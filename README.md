@@ -46,4 +46,4 @@ Bu proje MIT lisansı altında lisanslanmıştır - detaylar için [LICENSE](LIC
 ## İletişim
 İsmail Çakıl - [i.cakil53@gmail.com](mailto:i.cakil53@gmail.com)
 
-Proje Linki: [https://github.com/ismailcakil/cv-sitesi](https://github.com/ismailcakil/cv-sitesi) 
+Proje Linki: [https://github.com/SanjiCo/CV](https://github.com/SanjiCo/CV) 
