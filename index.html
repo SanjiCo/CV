@@ -3,436 +3,431 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İsmail Çakıl - CV</title>
-    <style>
-        :root {
-            --primary-color: #3b82f6;
-            --secondary-color: #60a5fa;
-            --background-color: #f9fafb;
-            --text-color: #111827;
-            --card-bg: #ffffff;
-            --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
-            --border-color: #e5e7eb;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            line-height: 1.7;
-            margin: 0;
-            padding: 0;
-            background-color: var(--background-color);
-            color: var(--text-color);
-            font-size: 1.1rem;
-            font-weight: 400;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 2rem;
-            background: var(--card-bg);
-            border-radius: 8px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            border: 1px solid var(--border-color);
-        }
-
-        header {
-            text-align: center;
-            padding: 2rem 0;
-            margin-bottom: 2rem;
-            border-bottom: 1px solid var(--border-color);
-            padding: 2rem;
-            margin: -2rem -2rem 2rem -2rem;
-        }
-
-        h1 {
-            color: var(--text-color);
-            margin: 0;
-            font-size: 2.5rem;
-            font-weight: 700;
-            letter-spacing: -0.025em;
-        }
-
-        h2 {
-            color: var(--text-color);
-            margin-top: 0.5rem;
-            font-size: 1.3rem;
-            font-weight: 500;
-            opacity: 0.9;
-        }
-
-        h3 {
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            display: inline-block;
-            position: relative;
-            font-weight: 600;
-        }
-
-        p {
-            color: #374151;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin: 0.75rem 0;
-        }
-
-        .section {
-            margin-bottom: 2.5rem;
-        }
-
-        .personal-info p {
-            margin: 0.75rem 0;
-            color: var(--text-color);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem;
-            background: var(--background-color);
-            border-radius: 6px;
-            font-size: 1.1rem;
-            border: 1px solid var(--border-color);
-        }
-
-        .personal-info p::before {
-            content: '•';
-            color: var(--primary-color);
-            font-size: 1.4rem;
-            line-height: 0;
-        }
-
-        .skills ul {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 0.75rem;
-            padding: 0;
-            list-style: none;
-        }
-
-        .skills li {
-            background: var(--background-color);
-            color: var(--text-color);
-            padding: 0.75rem 1rem;
-            border-radius: 6px;
-            text-align: center;
-            font-size: 1rem;
-            font-weight: 500;
-            transition: var(--transition);
-            cursor: default;
-            border: 1px solid var(--border-color);
-        }
-
-        .skills li:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-        }
-
-        .experience-item {
-            background: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-            border-left: 3px solid var(--primary-color);
-            transition: var(--transition);
-            border: 1px solid var(--border-color);
-        }
-
-        .experience-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-        }
-
-        .experience-item h4 {
-            color: var(--text-color);
-            margin: 0 0 0.5rem 0;
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-
-        .experience-item p {
-            color: #4b5563;
-            margin: 0.5rem 0;
-            font-size: 1.1rem;
-        }
-
-        .experience-item ul {
-            padding-left: 1.5rem;
-            margin: 0.75rem 0 0 0;
-        }
-
-        .experience-item li {
-            margin-bottom: 0.5rem;
-            color: var(--text-color);
-            font-size: 1.05rem;
-            line-height: 1.7;
-            position: relative;
-        }
-
-        .experience-item li::before {
-            content: '▹';
-            position: absolute;
-            left: -1rem;
-            color: var(--primary-color);
-        }
-
-        footer {
-            text-align: center;
-            padding: 1.5rem;
-            margin-top: 2rem;
-            border-top: 1px solid var(--border-color);
-            color: #64748b;
-            font-size: 1rem;
-        }
-
-        @media (max-width: 768px) {
-            body {
-                font-size: 1rem;
-            }
-
-            .container {
-                margin: 0;
-                border-radius: 0;
-                padding: 1rem;
-            }
-
-            header {
-                border-radius: 0;
-                margin: -1rem -1rem 1rem -1rem;
-            }
-
-            h1 {
-                font-size: 2.2rem;
-            }
-
-            h2 {
-                font-size: 1.2rem;
-            }
-
-            h3 {
-                font-size: 1.4rem;
-            }
-
-            p {
-                font-size: 1rem;
-            }
-
-            .experience-item li {
-                font-size: 1rem;
-            }
-        }
-
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --background-color: #111827;
-                --text-color: #f3f4f6;
-                --card-bg: #1f2937;
-                --border-color: #374151;
-            }
-
-            p {
-                color: #e5e7eb;
-            }
-
-            .experience-item p {
-                color: #d1d5db;
-            }
-
-            .experience-item li {
-                color: #f3f4f6;
-            }
-        }
-
-        .links-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-        }
-
-        .links-container a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-            background-color: var(--background-color);
-            color: var(--primary-color);
-            text-decoration: none;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            transition: var(--transition);
-            text-align: center;
-            font-weight: 500;
-        }
-
-        .links-container a:hover {
-            background-color: var(--primary-color);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: var(--shadow);
-        }
-
-        .links-container a i {
-            margin-right: 0.5rem;
-            font-size: 1.2rem;
-        }
-
-        @media (max-width: 768px) {
-            .links-container {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <title>İsmail Çakıl - Modern CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>İsmail Çakıl</h1>
-            <h2>Otelcilik Profesyoneli & Bilişim Teknolojileri Meraklısı</h2>
-        </header>
+    <nav class="floating-nav">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+            <i class="fas fa-moon"></i>
+        </button>
+        <ul class="nav-links">
+            <li><a href="#hero" data-section="hero">Ana Sayfa</a></li>
+            <li><a href="#about" data-section="about">Hakkında</a></li>
+            <li><a href="#experience" data-section="experience">Deneyim</a></li>
+            <li><a href="#skills" data-section="skills">Yetenekler</a></li>
+            <li><a href="#contact" data-section="contact">İletişim</a></li>
+        </ul>
+    </nav>
 
-        <section class="section personal-info">
-            <h3>Kişisel Bilgiler</h3>
-            <p>E-posta: i.cakil53@gmail.com</p>
-            <p>Telefon: +90 554 130 02 53</p>
-        </section>
-
-        <section class="section summary">
-            <h3>Özet</h3>
-            <p>14 yıllık otelcilik deneyimi boyunca müşteri ilişkileri, rezervasyon yönetimi, satış ve teknik destek alanlarında aktif rol aldım. Son 4 yıl boyunca resepsiyon müdürü olarak çalışarak ekip yönetimi ve operasyonel süreçleri yönettim. Aynı zamanda, tüm kariyerim boyunca teknik destek görevlerini de paralel olarak yürüttüm. Veri bilimi, yapay zeka ve bilişim teknolojileri alanlarında akademik ve profesyonel olarak ilerlemekteyim.</p>
-        </section>
-
-        <section class="section education">
-            <h3>Eğitim</h3>
-            <div class="experience-item">
-                <h4>Anadolu Üniversitesi - Açıköğretim Fakültesi</h4>
-                <p>Yönetim Bilişim Sistemleri (Devam Ediyor)</p>
+    <main class="main-container">
+        <section id="hero" class="hero-section">
+            <div class="hero-background">
+                <div class="gradient-orb orb-1"></div>
+                <div class="gradient-orb orb-2"></div>
+                <div class="gradient-orb orb-3"></div>
             </div>
-            <div class="experience-item">
-                <h4>Turizm ve Otel İşletmeciliği</h4>
-                <p>Ön Lisans (Mezun)</p>
+            <div class="hero-content">
+                <div class="profile-image-container">
+                    <div class="profile-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+                </div>
+                <h1 class="hero-title">İsmail Çakıl</h1>
+                <p class="hero-subtitle">Data Center Technician | IT Operations</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="14">0</span>
+                        <span class="stat-label">Yıl Deneyim</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="4">0</span>
+                        <span class="stat-label">Yıl Yöneticilik</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="15">0</span>
+                        <span class="stat-label">Teknik Yetkinlik</span>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fas fa-envelope"></i> İletişime Geç
+                    </a>
+                    <a href="#" id="download-cv" class="btn btn-secondary">
+                        <i class="fas fa-download"></i> CV İndir
+                    </a>
+                </div>
             </div>
-        </section>
-
-        <section class="section experience">
-            <h3>İş Deneyimi</h3>
-            <div class="experience-item">
-                <h4>Resepsiyon Müdürü</h4>
-                <p>2021-2025 (4 Yıl)</p>
-            </div>
-            <div class="experience-item">
-                <h4>Müşteri Karşılama, Satış ve Rezervasyon Görevlisi</h4>
-                <p>2011-2021 (10 Yıl)</p>
-            </div>
-            <div class="experience-item">
-                <h4>Turkcell Şube Yöneticisi</h4>
-                <p>2009-2011 (2 Yıl)</p>
-            </div>
-            <div class="experience-item">
-                <h4>Bilgisayar Teknik Servis Uzmanı</h4>
-                <p>2008-2009 (2 Yıl)</p>
-            </div>
-        </section>
-
-        <section class="section skills">
-            <h3>Yetkinlikler</h3>
-            <ul>
-                <li>Analitik Düşünme</li>
-                <li>Problem Çözme</li>
-                <li>Kriz Yönetimi</li>
-                <li>Müşteri İlişkileri</li>
-                <li>Teknik Cihaz Kurulumu ve Bakım</li>
-                <li>Ağ Güvenliği</li>
-                <li>Bilgisayar ve Yazıcı Bakımı</li>
-                <li>Sosyal Medya Yönetimi</li>
-                <li>Google Ads</li>
-                <li>Veri Analizi</li>
-                <li>SQL</li>
-                <li>Python</li>
-                <li>Makine Öğrenmesi</li>
-                <li>İletişim ve İkna</li>
-                <li>Takım Çalışması</li>
-            </ul>
-        </section>
-
-        <section class="section languages">
-            <h3>Diller</h3>
-            <p>Türkçe (Ana Dil)</p>
-            <p>İngilizce (B1-B2)</p>
-        </section>
-
-        <section class="section certificates">
-            <h3>Sertifikalar</h3>
-            <p>Google Data Analytics Professional Certificate (Devam Ediyor)</p>
-        </section>
-
-        <section class="section driving-license">
-            <h3>Ehliyet</h3>
-            <p>A Sınıfı, B Sınıfı</p>
-        </section>
-
-        <section class="section links">
-            <h3>Faydalı Bağlantılar</h3>
-            <div class="links-container">
-                <a href="https://www.linkedin.com/in/ismailcakil" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-linkedin"></i> LinkedIn Profilim
-                </a>
-                <a href="https://github.com/SanjiCo" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-github"></i> GitHub Profilim
-                </a>
-                <a href="mailto:i.cakil53@gmail.com">
-                    <i class="fas fa-envelope"></i> E-posta Gönder
-                </a>
-                <a href="#" id="download-pdf">
-                    <i class="fas fa-file-pdf"></i> CV'mi İndir (PDF)
-                </a>
-                <a href="https://medium.com/@ismailcakil" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-medium"></i> Medium Yazılarım
-                </a>
-                <a href="https://wa.me/905541300253" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
-                </a>
+            <div class="scroll-indicator">
+                <div class="scroll-arrow"></div>
             </div>
         </section>
 
-        <footer>
-            <p>© 2023 İsmail Çakıl</p>
-        </footer>
-    </div>
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Hakkımda</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p class="about-description">
+                            Şu anda veri merkezinde Data Center Technician olarak görev yapıyorum. Çalışmalarım; sistem kurulumu, donanım bakımı, kablolama, ağ bağlantıları ve altyapı operasyonları gibi temel süreçleri kapsıyor. Günlük iş rutinim, IT altyapısının sürekliliğini sağlamak ve ortaya çıkan sorunlara hızlı çözümler üretmek üzerine kurulu.
+                        </p>
+                        <p class="about-description">
+                            Önceki deneyimlerim sayesinde hem donanım hem de yazılım tarafında pratik bilgi kazandım. Sistem kurulumu, network yönetimi, donanım entegrasyonu ve güvenlik altyapılarında aktif rol aldım. Farklı sektörlerde edindiğim bu deneyimler, teknolojiyi sahada uygulamalı olarak öğrenmeme ve altyapı süreçlerine geniş bir perspektiften bakmama yardımcı oldu.
+                        </p>
+                        <p class="about-description">
+                            Bugün odaklandığım nokta, IT altyapısı, network yönetimi ve sistem yönetimi. Kendimi sürekli geliştirmeye, yeni teknolojileri öğrenmeye ve bulunduğum kurumun altyapı süreçlerini daha güvenli ve verimli hale getirmeye önem veriyorum.
+                        </p>
+                    </div>
+                    <div class="about-info">
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Eğitim</h3>
+                                <p>Yönetim Bilişim Sistemleri (Lisans)</p>
+                                <span>Anadolu Üniversitesi (2023-2025)</span>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Konum</h3>
+                                <p>Bursa, Türkiye</p>
+                                <span>Remote çalışmaya açık</span>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-language"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Diller</h3>
+                                <p>Türkçe (Ana Dil)</p>
+                                <span>İngilizce (Limited Working)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <script>
-        document.getElementById('download-pdf').addEventListener('click', function() {
-            // Sayfanın tamamını yakala
-            html2canvas(document.querySelector(".container")).then(canvas => {
-                const imgData = canvas.toDataURL('image/png');
-                const pdf = new jspdf.jsPDF('p', 'mm', 'a4');
-                const imgWidth = 210; // A4 kağıt genişliği (mm)
-                const pageHeight = 295; // A4 kağıt yüksekliği (mm)
-                const imgHeight = canvas.height * imgWidth / canvas.width;
-                let heightLeft = imgHeight;
-                let position = 0;
+        <section id="experience" class="experience-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">İş Deneyimi</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item" data-year="2025-Devam">
+                        <div class="timeline-marker current"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-card current">
+                                <h3>Technical Support Specialist</h3>
+                                <p class="timeline-duration">Eylül 2025 - Devam (3 ay)</p>
+                                <p class="timeline-company">Netweb Datacenter - Bursa</p>
+                                <div class="timeline-description">
+                                    <ul>
+                                        <li>Veri merkezi altyapısının kurulumu ve bakımı</li>
+                                        <li>Sistem kurulumu, donanım bakımı ve kablolama</li>
+                                        <li>Ağ bağlantıları ve altyapı operasyonları</li>
+                                        <li>IT altyapısının sürekliliğini sağlama</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-year="2025">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-card">
+                                <h3>Technical Specialist</h3>
+                                <p class="timeline-duration">Haziran 2025 - Ağustos 2025 (3 ay)</p>
+                                <p class="timeline-company">Turkcell Superonline - Bursa</p>
+                                <div class="timeline-description">
+                                    <ul>
+                                        <li>Teknik destek ve sistem yönetimi</li>
+                                        <li>Network altyapısı ve güvenlik</li>
+                                        <li>Müşteri teknik danışmanlığı</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-year="2020-2025">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-card">
+                                <h3>Resepsiyon Müdürü</h3>
+                                <p class="timeline-duration">Temmuz 2020 - Şubat 2025 (4 yıl 8 ay)</p>
+                                <p class="timeline-company">Lider OTEL - İstanbul</p>
+                                <div class="timeline-description">
+                                    <ul>
+                                        <li>Ekip yönetimi ve operasyonel süreçlerin koordinasyonu</li>
+                                        <li>Müşteri memnuniyeti ve hizmet kalitesinin optimize edilmesi</li>
+                                        <li>Teknolojik altyapı ve sistem yönetimi</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-year="2011-2023">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-card">
+                                <h3>Front Desk Receptionist</h3>
+                                <p class="timeline-duration">Eylül 2011 - Aralık 2023 (12 yıl 4 ay)</p>
+                                <p class="timeline-company">Lider OTEL - İstanbul</p>
+                                <div class="timeline-description">
+                                    <ul>
+                                        <li>Müşteri karşılama ve rezervasyon yönetimi</li>
+                                        <li>Satış stratejileri geliştirme ve uygulama</li>
+                                        <li>Teknik destek ve sistem bakım görevleri</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-year="2009-2010">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-card">
+                                <h3>Bilgisayar Teknisyeni</h3>
+                                <p class="timeline-duration">Aralık 2009 - Aralık 2010 (1 yıl 1 ay)</p>
+                                <p class="timeline-company">Kurtek Bilgisayar</p>
+                                <div class="timeline-description">
+                                    <ul>
+                                        <li>Donanım ve yazılım arıza tespiti ve onarımı</li>
+                                        <li>Ağ kurulumu ve güvenlik konfigürasyonu</li>
+                                        <li>Müşteri eğitimi ve teknik danışmanlık</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                // PDF'e resmi ekle
-                pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
-                heightLeft -= pageHeight;
+        <section id="skills" class="skills-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Yetenekler & Yetkinlikler</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3 class="category-title">
+                            <i class="fas fa-cogs"></i>
+                            Teknik Yetenekler
+                        </h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <span class="skill-name">Python</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">SQL</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="80"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Ağ Güvenliği</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="85"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3 class="category-title">
+                            <i class="fas fa-users"></i>
+                            Yönetim & İletişim
+                        </h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <span class="skill-name">Ekip Yönetimi</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="95"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Müşteri İlişkileri</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="95"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Problem Çözme</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Kriz Yönetimi</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Analitik Düşünme</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="90"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3 class="category-title">
+                            <i class="fas fa-chart-line"></i>
+                            Pazarlama & Dijital
+                        </h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <span class="skill-name">Google Ads</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="80"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Sosyal Medya Yönetimi</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">İletişim ve İkna</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Takım Çalışması</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="95"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="certifications">
+                    <h3 class="certifications-title">Sertifikalar & Eğitimler</h3>
+                    <div class="cert-grid">
+                        <div class="cert-item">
+                            <div class="cert-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="cert-info">
+                                <h4>C# Eğitimi</h4>
+                                <span class="cert-status">Tamamlandı</span>
+                            </div>
+                        </div>
+                        <div class="cert-item">
+                            <div class="cert-icon">
+                                <i class="fas fa-edit"></i>
+                            </div>
+                            <div class="cert-info">
+                                <h4>İçerik Editörlüğü</h4>
+                                <span class="cert-status">Tamamlandı</span>
+                            </div>
+                        </div>
+                        <div class="cert-item">
+                            <div class="cert-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="cert-info">
+                                <h4>Halkla İlişkiler ve İletişim</h4>
+                                <span class="cert-status">Tamamlandı</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                // Birden fazla sayfa gerekirse
-                while (heightLeft >= 0) {
-                    position = heightLeft - imgHeight;
-                    pdf.addPage();
-                    pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
-                    heightLeft -= pageHeight;
-                }
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">İletişim</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>E-posta</h3>
+                                <p>i.ckl53@outlook.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Telefon</h3>
+                                <p>+90 554 130 02 53</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-id-card"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Ehliyet</h3>
+                                <p>A Sınıfı, B Sınıfı</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/ismailcakil" target="_blank" class="social-link linkedin">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/SanjiCo" target="_blank" class="social-link github">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://medium.com/@ismailcakil" target="_blank" class="social-link medium">
+                            <i class="fab fa-medium"></i>
+                            <span>Medium</span>
+                        </a>
+                        <a href="https://wa.me/905541300253" target="_blank" class="social-link whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>WhatsApp</span>
+                        </a>
+                        <a href="mailto:i.ckl53@outlook.com" class="social-link email">
+                            <i class="fas fa-envelope"></i>
+                            <span>E-posta</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-                // PDF'i indir
-                pdf.save('ismail-cakil-cv.pdf');
-            });
-        });
-    </script>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 İsmail Çakıl. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+    <script src="script.js"></script>
 </body>
-</html> 
+</html>
