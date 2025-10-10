@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://ismailcakil.github.io/sitemap.xml
+
+# Allow search engines to access common files
+Allow: /images/
+Allow: /style.css
+Allow: /script.js
+
+# Disallow sensitive files (if any)
+Disallow: /*.tmp$
+Disallow: /*.log$
