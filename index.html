@@ -6,7 +6,7 @@
     <title>İsmail Çakıl - Data Center Technician | IT Operations Uzmanı</title>
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="İsmail Çakıl - Bursa merkezli Data Center Technician. 14+ yıl IT deneyimi, sistem yönetimi, network güvenliği ve server management uzmanı.">
+    <meta name="description" content="İsmail Çakıl - Bursa merkezli Data Center Technician ve IT Operations uzmanı. 14+ yıl deneyim, veri merkezi altyapısı, sistem yönetimi, network güvenliği, server management, Python, SQL, VMware. Netweb Datacenter Technical Support Specialist.">
     <meta name="keywords" content="İsmail Çakıl, Data Center Technician, IT Operations, Sistem Yönetimi, Network Güvenliği, Server Management, Hardware Troubleshooting, Bursa IT, Veri Merkezi Teknisyeni">
     <meta name="author" content="İsmail Çakıl">
     <meta name="robots" content="index, follow">
@@ -30,6 +30,12 @@
     <meta name="twitter:image" content="https://ismailcakil.github.io/images/profile.jpg">
     <meta name="twitter:image:alt" content="İsmail Çakıl Profil Fotoğrafı">
     <!-- Favicon -->
+    <!-- Performance Optimizations -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" as="style">
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="images/profile.jpg" as="image">
+
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E💻%3C/text%3E%3C/svg%3E">
     <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E💻%3C/text%3E%3C/svg%3E">
 
@@ -44,20 +50,32 @@
         "@type": "Person",
         "name": "İsmail Çakıl",
         "jobTitle": "Data Center Technician",
-        "description": "14 yıl deneyimli Data Center Technician ve IT Operations uzmanı",
+        "alternateName": "İsmail Çakıl IT Operations Uzmanı",
+        "description": "14 yıl deneyimli Data Center Technician ve IT Operations uzmanı. Veri merkezi altyapısı, sistem yönetimi, network güvenliği ve server management konularında uzman.",
         "url": "https://ismailcakil.github.io/",
-        "image": "https://ismailcakil.github.io/images/profile.jpg",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://ismailcakil.github.io/images/profile.jpg",
+            "caption": "İsmail Çakıl - Data Center Technician"
+        },
         "email": "i.ckl53@outlook.com",
         "telephone": "+90 554 130 02 53",
+        "nationality": "Turkish",
+        "birthPlace": {
+            "@type": "Place",
+            "name": "Türkiye"
+        },
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "Bursa",
+            "addressRegion": "Bursa",
             "addressCountry": "TR"
         },
         "alumniOf": {
             "@type": "EducationalOrganization",
             "name": "Anadolu Üniversitesi",
-            "department": "Yönetim Bilişim Sistemleri"
+            "department": "Yönetim Bilişim Sistemleri",
+            "url": "https://www.anadolu.edu.tr"
         },
         "worksFor": {
             "@type": "Organization",
@@ -68,23 +86,73 @@
                 "addressCountry": "TR"
             }
         },
+        "hasOccupation": {
+            "@type": "Occupation",
+            "name": "Data Center Technician",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "name": "Data Center Operations",
+                "description": "Veri merkezi altyapısı kurulumu, bakımı ve operasyonları"
+            },
+            "skills": [
+                "Data Center Operations",
+                "IT Infrastructure",
+                "Network Security",
+                "Server Management",
+                "Hardware Troubleshooting",
+                "System Administration",
+                "Python Programming",
+                "SQL Database Management",
+                "VMware Virtualization",
+                "Windows Server",
+                "Linux/Unix",
+                "Team Management",
+                "Crisis Management"
+            ]
+        },
         "knowsAbout": [
-            "Data Center Operations",
-            "IT Infrastructure",
-            "Network Security",
-            "Server Management",
-            "Hardware Troubleshooting",
-            "System Administration",
-            "Python Programming",
-            "SQL Database Management",
-            "VMware Virtualization",
-            "Windows Server",
-            "Linux/Unix"
+            {
+                "@type": "Thing",
+                "name": "Data Center Operations",
+                "description": "Veri merkezi altyapısı kurulumu ve yönetimi"
+            },
+            {
+                "@type": "Thing",
+                "name": "IT Infrastructure",
+                "description": "Bilgi teknolojileri altyapı yönetimi"
+            },
+            {
+                "@type": "Thing",
+                "name": "Network Security",
+                "description": "Ağ güvenliği ve konfigürasyonu"
+            },
+            {
+                "@type": "Thing",
+                "name": "Server Management",
+                "description": "Server kurulumu ve yönetimi"
+            },
+            {
+                "@type": "Thing",
+                "name": "Hardware Troubleshooting",
+                "description": "Donanım arıza tespiti ve onarımı"
+            }
         ],
         "sameAs": [
             "https://www.linkedin.com/in/ismailcakil",
             "https://github.com/SanjiCo",
             "https://medium.com/@ismailcakil"
+        ],
+        "workExample": [
+            {
+                "@type": "CreativeWork",
+                "name": "Technical Support Specialist - Netweb Datacenter",
+                "description": "Veri merkezi altyapısının kurulumu ve bakımı, sistem kurulumu, donanım bakımı ve kablolama"
+            },
+            {
+                "@type": "CreativeWork",
+                "name": "Technical Specialist - Turkcell Superonline",
+                "description": "Teknik destek ve sistem yönetimi, network altyapısı ve güvenlik"
+            }
         ]
     }
     </script>
@@ -113,7 +181,7 @@
             <div class="hero-content">
                 <div class="profile-image-container">
                     <div class="profile-image">
-                        <img src="images/profile.jpg" alt="İsmail Çakıl" />
+                        <img src="images/profile.jpg" alt="İsmail Çakıl - Data Center Technician ve IT Operations Uzmanı" loading="eager" />
                     </div>
                 </div>
                 <h1 class="hero-title">İsmail Çakıl</h1>
@@ -155,13 +223,13 @@
                 <div class="about-content">
                     <div class="about-text">
                         <p class="about-description">
-                            İsmail Çakıl olarak şu anda veri merkezinde Data Center Technician olarak görev yapıyorum. IT Operations uzmanı olarak çalışmalarım; sistem kurulumu, donanım bakımı, kablolama, ağ bağlantıları ve altyapı operasyonları gibi temel süreçleri kapsıyor. Data Center Technician olarak günlük iş rutinim, IT altyapısının sürekliliğini sağlamak ve ortaya çıkan sorunlara hızlı çözümler üretmek üzerine kurulu.
+                            İsmail Çakıl olarak şu anda veri merkezinde <strong>Data Center Technician</strong> olarak görev yapıyorum. <a href="#skills">IT Operations uzmanı</a> olarak çalışmalarım; sistem kurulumu, donanım bakımı, kablolama, ağ bağlantıları ve altyapı operasyonları gibi temel süreçleri kapsıyor. Data Center Technician olarak günlük iş rutinim, IT altyapısının sürekliliğini sağlamak ve ortaya çıkan sorunlara hızlı çözümler üretmek üzerine kurulu.
                         </p>
                         <p class="about-description">
-                            Önceki deneyimlerim sayesinde hem donanım hem de yazılım tarafında pratik bilgi kazandım. Sistem kurulumu, network yönetimi, donanım entegrasyonu ve güvenlik altyapılarında aktif rol aldım. Farklı sektörlerde edindiğim bu deneyimler, teknolojiyi sahada uygulamalı olarak öğrenmeme ve altyapı süreçlerine geniş bir perspektiften bakmama yardımcı oldu.
+                            Önceki <a href="#experience">deneyimlerim</a> sayesinde hem donanım hem de yazılım tarafında pratik bilgi kazandım. Sistem kurulumu, <a href="#skills">network yönetimi</a>, donanım entegrasyonu ve güvenlik altyapılarında aktif rol aldım. Farklı sektörlerde edindiğim bu deneyimler, teknolojiyi sahada uygulamalı olarak öğrenmeme ve altyapı süreçlerine geniş bir perspektiften bakmama yardımcı oldu.
                         </p>
                         <p class="about-description">
-                            İsmail Çakıl olarak bugün odaklandığım nokta, Data Center Operations, IT altyapısı, network yönetimi ve sistem yönetimi. IT Operations uzmanı olarak kendimi sürekli geliştirmeye, yeni teknolojileri öğrenmeye ve bulunduğum kurumun altyapı süreçlerini daha güvenli ve verimli hale getirmeye önem veriyorum.
+                            İsmail Çakıl olarak bugün odaklandığım nokta, Data Center Operations, IT altyapısı, <a href="#skills">network yönetimi</a> ve sistem yönetimi. IT Operations uzmanı olarak kendimi sürekli geliştirmeye, yeni teknolojileri öğrenmeye ve bulunduğum kurumun altyapı süreçlerini daha güvenli ve verimli hale getirmeye önem veriyorum. Detaylı <a href="#contact">iletişim bilgilerim</a> için aşağıdaki bölümü inceleyebilirsiniz.
                         </p>
                     </div>
                     <div class="about-info">
