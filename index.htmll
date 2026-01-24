@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İsmail Çakıl | System Support Specialist</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+    <nav class="floating-nav">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Temayı Değiştir">
+            <i class="fas fa-moon"></i>
+        </button>
+        <ul class="nav-links">
+            <li><a href="#hero">Başlangıç</a></li>
+            <li><a href="#about">Özet</a></li>
+            <li><a href="#experience">Deneyim</a></li>
+            <li><a href="#skills">Yetenekler</a></li>
+            <li><a href="#contact">İletişim</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-container">
+        
+        <section id="hero" class="hero-section">
+            <div class="hero-background">
+                <div class="gradient-orb orb-1"></div>
+                <div class="gradient-orb orb-2"></div>
+                <div class="gradient-orb orb-3"></div>
+            </div>
+            <div class="hero-content">
+                <div class="profile-image-container">
+                    <div class="profile-image">
+                        <img src="images/profile.jpg" alt="İsmail Çakıl" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="image-placeholder" style="display:none;"><i class="fas fa-user"></i></div>
+                    </div>
+                </div>
+                <h1 class="hero-title">İsmail Çakıl</h1>
+                <p class="hero-subtitle">System Support Specialist | Data Center Technician</p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="15">0</span>
+                        <span class="stat-label">Yıl Deneyim</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="24">0</span>
+                        <span class="stat-label">7/24 Operasyon</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="100">0</span>
+                        <span class="stat-label">% Başarı</span>
+                    </div>
+                </div>
+                
+                <div class="hero-actions">
+                    <a href="#contact" class="btn btn-primary"><i class="fas fa-paper-plane"></i> İletişim</a>
+                    <a href="#" id="download-cv" class="btn btn-secondary"><i class="fas fa-download"></i> CV İndir (PDF)</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section container">
+            <div class="section-header">
+                <h2 class="hero-title" style="font-size: 2.5rem;">Hakkımda</h2>
+            </div>
+            <div class="about-content">
+                <p class="about-description">
+                    15 yıllık saha tecrübesine sahip bir IT profesyoneliyim. Şu an <strong>Netweb Datacenter</strong> bünyesinde veri merkezi operasyonları, sanallaştırma ve altyapı yönetimi süreçlerinde aktif rol alıyorum. Karmaşık network yapılarını kurma ve kriz anında hızlı çözüm üretme konularında uzmanlaştım.
+                </p>
+                <div class="info-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                    <div class="info-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>Eğitim</h3>
+                        <p>Yönetim Bilişim Sistemleri (MIS) - Lisans</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-language"></i>
+                        <h3>Diller</h3>
+                        <p>Türkçe (Ana Dil) | İngilizce (Teknik)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="experience-section container">
+            <h2 class="hero-title" style="font-size: 2.5rem; text-align: center;">Deneyim</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <h3>System Support Specialist</h3>
+                        <span class="timeline-duration">2025 - Günümüz</span>
+                        <p><strong>Netweb Datacenter</strong></p>
+                        <ul>
+                            <li>VMware ESXi yönetimi ve Sanal Makine (VM) yapılandırmaları.</li>
+                            <li>Fiziksel sunucu montajı, Rack kabin dizaynı ve network kablolaması.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <h3>Fiber Optic & Network Specialist</h3>
+                        <span class="timeline-duration">2025 (Haziran - Ağustos)</span>
+                        <p><strong>Turkcell Superonline</strong></p>
+                        <ul>
+                            <li>Fusion Splice fiber sonlandırma ve Wi-Fi 6/7 optimizasyonları.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <h3>Front Office Manager & IT Support</h3>
+                        <span class="timeline-duration">2011 - 2025</span>
+                        <p><strong>Lider Otel</strong></p>
+                        <ul>
+                            <li>60 odalı tesisin tüm network ve IT altyapısının sıfırdan kurulumu.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills-section container">
+            <h2 class="hero-title" style="font-size: 2.5rem; text-align: center;">Teknik Yetkinlikler</h2>
+            <div class="skills-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div class="skill-category">
+                    <h3>Sistem & Sanallaştırma</h3>
+                    <div class="skill-item">
+                        <span>VMware ESXi</span>
+                        <div class="progress-bar"><div class="skill-progress" data-progress="95"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span>Windows/Linux Server</span>
+                        <div class="progress-bar"><div class="skill-progress" data-progress="90"></div></div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Network & Donanım</h3>
+                    <div class="skill-item">
+                        <span>Fiber Optik (Fusion Splice)</span>
+                        <div class="progress-bar"><div class="skill-progress" data-progress="85"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span>Rack Design & Cabling</span>
+                        <div class="progress-bar"><div class="skill-progress" data-progress="95"></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section container">
+            <div class="hero-content">
+                <h2 class="hero-title" style="font-size: 2.5rem;">İletişim</h2>
+                <div class="contact-grid" style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 2rem;">
+                    <a href="mailto:i.ckl53@outlook.com" class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>i.ckl53@outlook.com</p>
+                    </a>
+                    <a href="https://linkedin.com/in/ismailcakil" target="_blank" class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <p>LinkedIn</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
