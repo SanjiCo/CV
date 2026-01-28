@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İsmail Çakıl | Kurumsal Otomasyon & AI Çözümleri</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .hero-gradient { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+        .service-card:hover { transform: translateY(-10px); transition: all 0.3s ease; }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-900">
+
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="text-2xl font-bold text-slate-900">İSMAİL ÇAKIL</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#hizmetler" class="hover:text-blue-600 transition">Çözümler</a>
+                    <a href="#kapasite" class="hover:text-blue-600 transition">Kapasite</a>
+                    <a href="#iletisim" class="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition">Ücretsiz Analiz İsteyin</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-gradient text-white py-24 px-4 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+                KOBİ'nizi <span class="text-blue-400">Yapay Zeka</span> ile Otopilota Alın
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 mb-10 leading-relaxed">
+                İş yerinizdeki karmaşık süreçleri n8n tabanlı kurumsal otomasyonlarla basitleştiriyoruz. Verileri topluyor, AI ile analiz ediyor ve size sadece karar vermeyi bırakıyoruz.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
+                <a href="#hizmetler" class="bg-white text-slate-900 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition">Hizmetleri İnceleyin</a>
+                <a href="#iletisim" class="border-2 border-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-slate-900 transition">Projemi Anlatayım</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="hizmetler" class="py-20 max-w-7xl mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-slate-900 mb-4">Kurumsal Çözüm Alanlarımız</h2>
+            <p class="text-gray-600">Teknoloji bağımsız, sonuç odaklı süreç yönetimi.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center">
+                <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-brain text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">AI Destekli Talep Analizi</h3>
+                <p class="text-gray-600 text-sm">Gelen talepleri anında analiz eder, aciliyetini belirler ve doğru kişiye Telegram üzerinden raporlar.</p>
+            </div>
+            <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center">
+                <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-sync text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Veri Senkronizasyonu</h3>
+                <p class="text-gray-600 text-sm">Web siteniz, Sheets ve CRM araçlarınız arasındaki veri trafiğini hatasız ve 7/24 sağlar.</p>
+            </div>
+            <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center">
+                <div class="w-16 h-16 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-chart-line text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Operasyonel Verimlilik</h3>
+                <p class="text-gray-600 text-sm">Tekrarlayan işleri otomatize ederek personelinize haftalık ortalama 15 saat kazandırır.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="iletisim" class="bg-slate-100 py-20 px-4">
+        <div class="max-w-3xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden">
+            <div class="bg-blue-600 p-8 text-white text-center">
+                <h2 class="text-2xl font-bold">Ücretsiz Süreç Analizi</h2>
+                <p class="mt-2 opacity-90">Hangi süreci otomatize etmek istediğinizi anlatın, yol haritasını çıkaralım.</p>
+            </div>
+            <form action="https://n8n.ismailcakil.com/webhook/969447f6-6081-4b5e-a14b-63c9f7543103" method="POST" class="p-8 space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <input type="text" name="name" placeholder="Adınız" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition">
+                    <input type="email" name="email" placeholder="E-posta Adresiniz" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition">
+                </div>
+                <textarea name="needs" rows="4" placeholder="Hangi iş akışınızda yardıma ihtiyacınız var?" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition"></textarea>
+                <button type="submit" class="w-full bg-slate-900 text-white font-bold py-4 rounded-lg hover:bg-slate-800 transition shadow-lg">
+                    AI Analizini Başlat <i class="fas fa-bolt ml-2 text-yellow-400"></i>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center text-gray-500 text-sm">
+        <p>© 2026 ismailcakil.com - Kurumsal Otomasyon & AI Mimarlığı</p>
+    </footer>
+
+</body>
+</html>
