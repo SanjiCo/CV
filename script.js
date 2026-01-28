@@ -1,5 +1,5 @@
-// Modern CV JavaScript - n8n & Otomasyon Entegreli
-class ModernCV {
+// İsmail Çakıl - Otomasyon Ajansı JS (2026 Edition)
+class AutomationAgency {
     constructor() {
         this.init();
     }
@@ -8,16 +8,15 @@ class ModernCV {
         this.setupThemeToggle();
         this.setupNavigation();
         this.setupAnimations();
-        this.setupSkillBars();
         this.setupCounters();
-        this.setupPDFDownload();
+        this.setupN8nForm();
         this.setupScrollEffects();
-        this.setupN8nForm(); // YENİ: n8n bağlantısı eklendi
+        console.log("🚀 Automation Agency Engine Started");
     }
 
-    // YENİ: n8n Webhook Bağlantısı
+    // --- n8n Webhook & Lead Capture ---
     setupN8nForm() {
-        const contactForm = document.getElementById('n8n-contact-form');
+        const contactForm = document.getElementById('n8n-form');
         if (!contactForm) return;
 
         contactForm.addEventListener('submit', async (e) => {
@@ -26,180 +25,173 @@ class ModernCV {
             const btn = contactForm.querySelector('button');
             const originalBtnText = btn.innerHTML;
             
-            // Yükleniyor durumu
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Gönderiliyor...';
-            btn.disabled = true;
+            // UI Feedback
+            btn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> İşleniyor...';
+            btn.style.pointerEvents = 'none';
+            btn.style.opacity = '0.7';
 
             const formData = new FormData(contactForm);
             const data = Object.fromEntries(formData.entries());
 
             try {
-                // n8n Tünel Adresinize POST isteği gönderir
+                // n8n Tünel Adresiniz
                 const response = await fetch('https://n8n.ismailcakil.com/webhook/landing-lead', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         ...data,
-                        source: 'ismailcakil.com',
-                        timestamp: new Date().toISOString()
+                        source: 'ismailcakil.com_landing',
+                        timestamp: new Date().toISOString(),
+                        browser: navigator.userAgent
                     })
                 });
 
                 if (response.ok) {
-                    this.showNotification('Mesajınız başarıyla iletildi!', 'success');
+                    this.showNotification('Talebiniz n8n üzerinden alındı! Sizinle iletişime geçeceğim.', 'success');
                     contactForm.reset();
                 } else {
-                    throw new Error('Bağlantı hatası');
+                    throw new Error('502/1033 Connection Error');
                 }
             } catch (error) {
-                console.error('Webhook Hatası:', error);
-                this.showNotification('Tünel bağlantısı kurulamadı. Lütfen direkt e-posta gönderin.', 'error');
+                console.error('Tünel Hatası:', error);
+                this.showNotification('Tünel şu an çevrimdışı. Lütfen admin@ismailcakil.com üzerinden ulaşın.', 'error');
             } finally {
                 btn.innerHTML = originalBtnText;
-                btn.disabled = false;
+                btn.style.pointerEvents = 'auto';
+                btn.style.opacity = '1';
             }
         });
     }
 
-    // Theme Toggle
+    // --- Modern Bildirim Sistemi ---
+    showNotification(message, type = 'info') {
+        const existing = document.querySelector('.notif-box');
+        if (existing) existing.remove();
+
+        const notif = document.createElement('div');
+        notif.className = `notif-box notif-${type}`;
+        notif.innerHTML = `
+            <div style="display:flex; align-items:center; gap:12px;">
+                <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-triangle'}"></i>
+                <span>${message}</span>
+            </div>
+        `;
+
+        // Dinamik Stil
+        notif.style.cssText = `
+            position: fixed; top: 30px; right: 30px; z-index: 9999;
+            background: ${type === 'success' ? '#10b981' : '#ff4757'};
+            color: white; padding: 1.2rem 2rem; border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3); font-weight: 600;
+            transform: translateX(150%); transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        `;
+
+        document.body.appendChild(notif);
+        setTimeout(() => notif.style.transform = 'translateX(0)', 100);
+        setTimeout(() => {
+            notif.style.transform = 'translateX(150%)';
+            setTimeout(() => notif.remove(), 500);
+        }, 5000);
+    }
+
+    // --- Tema Yönetimi ---
     setupThemeToggle() {
         const themeToggle = document.getElementById('theme-toggle');
         if (!themeToggle) return;
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const savedTheme = localStorage.getItem('theme') || (prefersDark ? 'dark' : 'light');
+
+        const savedTheme = localStorage.getItem('theme') || 'dark';
         this.setTheme(savedTheme);
 
         themeToggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            this.setTheme(newTheme);
-            localStorage.setItem('theme', newTheme);
+            const current = document.documentElement.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            this.setTheme(next);
+            localStorage.setItem('theme', next);
         });
     }
 
     setTheme(theme) {
         document.documentElement.setAttribute('data-theme', theme);
-        const themeIcon = document.querySelector('#theme-toggle i');
-        if (themeIcon) {
-            themeIcon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
-        }
+        const icon = document.querySelector('#theme-toggle i');
+        if (icon) icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
     }
 
-    // Diğer mevcut fonksiyonlar (Navigation, Animations, Counters, PDF vb.) aynen devam eder...
-    // [PDF oluşturma ve diğer fonksiyonların kodları burada saklı kalmalıdır]
-
-    // Navigation
-    setupNavigation() {
-        const navLinks = document.querySelectorAll('.nav-links a');
-        const sections = document.querySelectorAll('section[id]');
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                const targetId = link.getAttribute('href');
-                if (targetId.startsWith('#')) {
-                    e.preventDefault();
-                    const targetSection = document.querySelector(targetId);
-                    if (targetSection) {
-                        const offsetTop = targetSection.offsetTop - 100;
-                        window.scrollTo({ top: offsetTop, behavior: 'smooth' });
-                    }
-                }
-            });
-        });
-    }
-
+    // --- Animasyonlar & Akış ---
     setupAnimations() {
-        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('visible');
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
             });
-        }, observerOptions);
-        document.querySelectorAll('.timeline-card, .skill-category, .info-card, .contact-item, .cert-item').forEach(el => {
-            el.classList.add('fade-in');
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.service-card, .skill-category').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = '0.6s ease-out';
             observer.observe(el);
         });
     }
 
+    // --- Sayaç Animasyonu ---
     setupCounters() {
         const counters = document.querySelectorAll('.stat-number');
-        const counterObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const counter = entry.target;
-                    const target = parseInt(counter.getAttribute('data-target'));
-                    this.animateCounter(counter, 0, target, 2000);
-                    counterObserver.unobserve(counter);
+        counters.forEach(counter => {
+            const target = +counter.getAttribute('data-target');
+            const update = () => {
+                const count = +counter.innerText;
+                const speed = target / 100;
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + speed);
+                    setTimeout(update, 20);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                if(entries[0].isIntersecting) {
+                    update();
+                    observer.unobserve(counter);
                 }
             });
-        }, { threshold: 0.5 });
-        counters.forEach(counter => counterObserver.observe(counter));
-    }
-
-    animateCounter(element, start, end, duration) {
-        const startTime = performance.now();
-        const updateCounter = (currentTime) => {
-            const elapsed = currentTime - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-            const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-            const current = Math.floor(start + (end - start) * easeOutQuart);
-            element.textContent = current;
-            if (progress < 1) requestAnimationFrame(updateCounter);
-            else element.textContent = end;
-        };
-        requestAnimationFrame(updateCounter);
-    }
-
-    setupPDFDownload() {
-        const downloadBtn = document.getElementById('download-cv');
-        if (!downloadBtn) return;
-        downloadBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            this.showNotification('PDF oluşturma özelliği aktif ediliyor...', 'info');
-            // jspdf fonksiyonunu burada çağırabilirsiniz
+            observer.observe(counter);
         });
     }
 
-    showNotification(message, type = 'info') {
-        const notification = document.createElement('div');
-        notification.className = `notification notification-${type}`;
-        notification.innerHTML = `<span>${message}</span>`;
-        notification.style.cssText = `
-            position: fixed; top: 20px; right: 20px; z-index: 10000;
-            background: ${type === 'success' ? '#10b981' : '#ef4444'};
-            color: white; padding: 1rem 1.5rem; border-radius: 8px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2); transition: 0.3s;
-        `;
-        document.body.appendChild(notification);
-        setTimeout(() => notification.remove(), 4000);
+    // --- Navigasyon & Scroll ---
+    setupNavigation() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
     }
 
     setupScrollEffects() {
-        let lastScrollTop = 0;
         const nav = document.querySelector('.floating-nav');
         window.addEventListener('scroll', () => {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            if (nav) {
-                if (scrollTop > lastScrollTop && scrollTop > 100) nav.style.transform = 'translateX(-50%) translateY(-100px)';
-                else nav.style.transform = 'translateX(-50%) translateY(0)';
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(10, 10, 11, 0.95)';
+                nav.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
+            } else {
+                nav.style.background = 'rgba(10, 10, 11, 0.8)';
+                nav.style.boxShadow = 'none';
             }
-            lastScrollTop = scrollTop;
         });
-    }
-
-    setupSkillBars() {
-        const skillBars = document.querySelectorAll('.skill-progress');
-        const skillObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const progressBar = entry.target;
-                    const targetProgress = progressBar.getAttribute('data-progress');
-                    setTimeout(() => { progressBar.style.width = `${targetProgress}%`; }, 200);
-                    skillObserver.unobserve(progressBar);
-                }
-            });
-        }, { threshold: 0.5 });
-        skillBars.forEach(bar => skillObserver.observe(bar));
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => { new ModernCV(); });
+// Başlat
+document.addEventListener('DOMContentLoaded', () => {
+    new AutomationAgency();
+});
