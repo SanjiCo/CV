@@ -3,205 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İsmail Çakıl - Sistem Uzmanı & Otomasyon Mimarı</title>
-
-    <meta name="description" content="İsmail Çakıl - Bursa merkezli System Support Specialist ve n8n Otomasyon Uzmanı. 15 yıllık IT deneyimiyle iş süreçlerinizi otopilota bağlıyoruz.">
-    <meta name="keywords" content="İsmail Çakıl, n8n otomasyon, sistem uzmanı, data center technician, iş otomasyonu, bursa it danışmanlık, cloudflare tunnel">
-    <meta name="author" content="İsmail Çakıl">
+    <title>İsmail Çakıl | n8n & Yapay Zeka Otomasyon Sistemleri</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "İsmail Çakıl",
-        "jobTitle": "System Support Specialist & Automation Architect",
-        "description": "15 yıllık operasyonel deneyime sahip IT profesyoneli. n8n ve Yapay Zeka ile iş otomasyonları uzmanı.",
-        "url": "https://ismailcakil.com/",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Bursa",
-            "addressCountry": "TR"
+    <style>
+        :root { --accent: #ff4757; --primary: #2f3542; }
+        .service-card { 
+            background: rgba(255,255,255,0.05); 
+            border: 1px solid rgba(255,255,255,0.1); 
+            padding: 2rem; 
+            border-radius: 20px; 
+            transition: 0.3s;
         }
-    }
-    </script>
+        .service-card:hover { transform: translateY(-10px); border-color: var(--accent); }
+        .price-tag { color: var(--accent); font-weight: 800; font-size: 1.5rem; display: block; margin-top: 1rem; }
+    </style>
 </head>
 <body>
+
     <nav class="floating-nav">
-        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-            <i class="fas fa-moon"></i>
-        </button>
         <ul class="nav-links">
-            <li><a href="#hero">Ana Sayfa</a></li>
-            <li><a href="#automation">Otomasyon</a></li>
-            <li><a href="#experience">Deneyim</a></li>
-            <li><a href="#skills">Yetenekler</a></li>
-            <li><a href="#contact">İletişim</a></li>
+            <li><a href="#hero">Başlangıç</a></li>
+            <li><a href="#solutions">Çözümler</a></li>
+            <li><a href="#packages">Paketler</a></li>
+            <li><a href="#contact">Teklif Al</a></li>
         </ul>
     </nav>
 
-    <main class="main-container">
-        <section id="hero" class="hero-section">
-            <div class="hero-background">
-                <div class="gradient-orb orb-1"></div>
-                <div class="gradient-orb orb-2"></div>
-                <div class="gradient-orb orb-3"></div>
+    <section id="hero" class="hero-section">
+        <div class="hero-content" style="text-align: center;">
+            <h1 class="hero-title" style="font-size: 3.5rem; line-height: 1.1;">İşinizi <span style="color:var(--accent)">Otomatik</span> Çalışan Bir Makineye Dönüştürün</h1>
+            <p class="hero-subtitle" style="margin-top: 20px;">n8n ve AI kullanarak manuel iş yükünüzü %80 azaltıyoruz. 15 yıllık sistem güvenliği tecrübesiyle.</p>
+            <div class="hero-actions" style="margin-top: 40px;">
+                <a href="#contact" class="btn btn-primary">Ücretsiz Danışmanlık Al</a>
             </div>
-            <div class="hero-content">
-                <div class="profile-image-container">
-                    <div class="profile-image">
-                        <img src="images/profile.jpg" alt="İsmail Çakıl - Automation Expert" loading="eager" />
-                    </div>
-                </div>
-                <h1 class="hero-title">İsmail Çakıl</h1>
-                <p class="hero-subtitle">İş Süreçlerinizi Otopilota Bağlayın</p>
-                <p style="max-width: 600px; margin: 0 auto 2rem; color: var(--text-muted);">
-                    15 yıllık sistem altyapı tecrübesini n8n ve Yapay Zeka ile birleştiriyorum. İşletmenizin manuel yükünü azaltan, güvenli ve ölçeklenebilir dijital iş akışları kuruyorum.
-                </p>
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="15">0</span>
-                        <span class="stat-label">Yıl Deneyim</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="100">0</span>
-                        <span class="stat-label">% Verimlilik Artışı</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="24">0</span>
-                        <span class="stat-label">7 Kesintisiz Sistem</span>
-                    </div>
-                </div>
-                <div class="hero-actions">
-                    <a href="#automation" class="btn btn-primary"><i class="fas fa-bolt"></i> Çözümleri Gör</a>
-                    <a href="#contact" class="btn btn-secondary"><i class="fas fa-calendar-check"></i> Ücretsiz Analiz Al</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="automation" class="skills-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Otomasyon Çözümleri</h2>
-                    <p style="color: var(--text-muted);">İşletmenizi dijital çağa taşıyan akıllı akışlar.</p>
-                    <div class="section-divider"></div>
-                </div>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3 class="category-title"><i class="fas fa-robot"></i> AI & CRM Entegrasyonu</h3>
-                        <p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.8;">
-                            Müşteri taleplerini AI ile analiz edin, otomatik cevaplayın ve CRM sisteminize (Hubspot, Pipedrive vb.) hatasız işleyin.
-                        </p>
-                    </div>
-                    <div class="skill-category">
-                        <h3 class="category-title"><i class="fas fa-sync"></i> E-Ticaret Otomasyonu</h3>
-                        <p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.8;">
-                            Sipariş yönetimi, stok takibi ve kargo bildirimlerini n8n ile bağlayın; manuel veri girişine son verin.
-                        </p>
-                    </div>
-                    <div class="skill-category">
-                        <h3 class="category-title"><i class="fas fa-shield-alt"></i> Güvenli Self-Hosted</h3>
-                        <p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.8;">
-                            Verileriniz dışarı çıkmasın. Cloudflare Tunnel altyapısıyla otomasyonlarınızı kendi güvenli sunucunuzda barındıralım.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="experience" class="experience-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Uzmanlık & Deneyim</h2>
-                    <div class="section-divider"></div>
-                </div>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-marker current"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-card current">
-                                <h3>System Support Specialist</h3>
-                                <p class="timeline-duration">Eylül 2025 - Günümüz</p>
-                                <p class="timeline-company">Netweb Datacenter - Bursa</p>
-                                <div class="timeline-description">
-                                    <ul>
-                                        <li>Fiziksel ve sanal sunucu altyapısı (VMware) yönetimi.</li>
-                                        <li>Network konfigürasyonu ve 7/24 sistem izleme.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">İletişim & Teklif</h2>
-                    <p style="color: var(--text-muted);">Projenizi anlatın, size özel otomasyon kurgusunu hazırlayalım.</p>
-                    <div class="section-divider"></div>
-                </div>
-                <div class="contact-content">
-                    <form id="n8n-contact-form" class="contact-form" style="max-width: 500px; margin: 0 auto;">
-                        <input type="text" name="name" placeholder="Adınız Soyadınız" required class="input-field">
-                        <input type="email" name="email" placeholder="E-posta Adresiniz" required class="input-field">
-                        <select name="service_type" class="input-field">
-                            <option value="otomasyon">Otomasyon Projesi</option>
-                            <option value="sistem">Sistem Destek</option>
-                            <option value="diger">Diğer</option>
-                        </select>
-                        <textarea name="message" placeholder="İhtiyacınız olan çözüm nedir?" required class="input-field" style="height: 120px;"></textarea>
-                        <button type="submit" class="btn btn-primary w-100">Talebi Gönder</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 İsmail Çakıl. Tüm hakları saklıdır.</p>
         </div>
-    </footer>
+    </section>
+
+    <section id="solutions" class="container" style="padding: 100px 20px;">
+        <div class="section-header" style="text-align: center; margin-bottom: 60px;">
+            <h2 style="font-size: 2.5rem;">n8n ile Neler Mümkün?</h2>
+            <p>Sektörel bazda sunduğumuz profesyonel otomasyon hizmetleri</p>
+        </div>
+
+        <div class="skills-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            
+            <div class="service-card">
+                <i class="fas fa-shopping-bag fa-3x" style="color:var(--accent)"></i>
+                <h3>E-Ticaret & Pazaryeri</h3>
+                <p>Trendyol, Hepsiburada veya Shopify siparişlerinizi n8n ile yakalayıp, faturayı kesin, kargo etiketini oluşturun ve müşteriye WhatsApp'tan takip linki atın.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-envelope-open-text fa-3x" style="color:var(--accent)"></i>
+                <h3>Akıllı Lead Yönetimi</h3>
+                <p>Web sitenizden gelen formları yapay zeka ile puanlayın. Gerçek müşterileri CRM'e ekleyin, "çöp" mesajları eleyin ve ekibinize anlık Slack/Telegram bildirimi gönderin.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-brain fa-3x" style="color:var(--accent)"></i>
+                <h3>AI İçerik & Sosyal Medya</h3>
+                <p>Bir konuyu n8n üzerinden GPT-4'e gönderin; metni yazsın, görseli üretsin ve LinkedIn, Instagram, WordPress üzerinde planlayıp otomatik paylaşsın.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="packages" style="background: rgba(0,0,0,0.2); padding: 100px 20px;">
+        <div class="container">
+            <div class="section-header" style="text-align: center;">
+                <h2>Hizmet Paketleri</h2>
+            </div>
+            <div class="skills-grid" style="margin-top: 50px;">
+                
+                <div class="service-card" style="border: 2px solid #555;">
+                    <h4>Kurulum & Danışmanlık</h4>
+                    <p>Kendi bilgisayarınızda veya sunucunuzda Docker + Cloudflare Tunnel + n8n kurulumu. İlk otomasyon hediye!</p>
+                    <span class="price-tag">İletişime Geçin</span>
+                </div>
+
+                <div class="service-card" style="border: 2px solid var(--accent);">
+                    <div style="background:var(--accent); color:white; padding:5px 10px; display:inline-block; border-radius:5px; margin-bottom:10px;">En Popüler</div>
+                    <h4>Anahtar Teslim Proje</h4>
+                    <p>İhtiyacınıza özel, karmaşık API entegrasyonları ve AI destekli iş akışlarının tasarımı ve devreye alınması.</p>
+                    <span class="price-tag">Teklif Alın</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container" style="padding: 100px 20px;">
+        <div style="max-width: 600px; margin: 0 auto; background: var(--primary); padding: 40px; border-radius: 20px;">
+            <h2 style="text-align: center;">Hemen Başlayalım</h2>
+            <form id="n8n-form">
+                <input type="text" name="name" placeholder="Adınız" required style="width: 100%; margin-bottom: 20px; padding: 15px; border-radius: 10px; border: none;">
+                <input type="email" name="email" placeholder="E-posta" required style="width: 100%; margin-bottom: 20px; padding: 15px; border-radius: 10px; border: none;">
+                <textarea name="needs" placeholder="Hangi süreci otomatize etmek istersiniz?" style="width: 100%; margin-bottom: 20px; padding: 15px; border-radius: 10px; border: none; height: 100px;"></textarea>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Ücretsiz Ön Görüşme Randevusu Al</button>
+            </form>
+        </div>
+    </section>
 
     <script>
-        document.getElementById('n8n-contact-form').addEventListener('submit', async function(e) {
+        document.getElementById('n8n-form').addEventListener('submit', async (e) => {
             e.preventDefault();
-            const btn = e.target.querySelector('button');
-            const originalText = btn.innerText;
-            btn.innerText = "Gönderiliyor...";
-            btn.disabled = true;
-
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData.entries());
-
+            const data = Object.fromEntries(new FormData(e.target));
+            
             try {
-                // n8n Tünel Adresin
-                const response = await fetch('https://n8n.ismailcakil.com/webhook/landing-page-lead', {
+                const res = await fetch('https://n8n.ismailcakil.com/webhook/landing-lead', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
+                    headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify(data)
                 });
-
-                if (response.ok) {
-                    alert('Başarılı! Mesajınız n8n üzerinden bana ulaştı.');
-                    this.reset();
-                } else {
-                    throw new Error('Hata oluştu');
-                }
-            } catch (error) {
-                alert('Tünel bağlantısı başarısız. Lütfen i.ckl53@outlook.com üzerinden ulaşın.');
-            } finally {
-                btn.innerText = originalText;
-                btn.disabled = false;
+                if(res.ok) alert('Mesajınız n8n üzerinden başarıyla iletildi! En kısa sürede döneceğim.');
+            } catch (err) {
+                alert('Tünel bağlantısı kurulamadı. Lütfen admin@ismailcakil.com adresine yazın.');
             }
         });
     </script>
-    <script src="script.js"></script>
 </body>
 </html>
