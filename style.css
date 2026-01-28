@@ -219,3 +219,18 @@ body {
     .hero-title { font-size: 2.5rem; }
     .floating-nav { width: 90%; font-size: 0.8rem; }
 }
+
+/* Buton kilitlendiğinde (İşlem sürerken) */
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed !important;
+    filter: grayscale(0.5);
+    transform: none !important; /* Hover efektini iptal eder */
+    box-shadow: none !important;
+}
+
+/* Bildirim kutusu (showNotification için gerekli) */
+.notif-box {
+    font-family: 'Inter', sans-serif;
+    min-width: 300px;
+}
