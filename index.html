@@ -125,23 +125,10 @@
             </form>
         </div>
     </section>
+    <script src="script.js"></script>
+</body>
+</html>
 
-    <script>
-        document.getElementById('n8n-form').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const data = Object.fromEntries(new FormData(e.target));
-            
-            try {
-                const res = await fetch('https://n8n.ismailcakil.com/webhook/landing-lead', {
-                    method: 'POST',
-                    headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify(data)
-                });
-                if(res.ok) alert('Mesajınız n8n üzerinden başarıyla iletildi! En kısa sürede döneceğim.');
-            } catch (err) {
-                alert('Tünel bağlantısı kurulamadı. Lütfen admin@ismailcakil.com adresine yazın.');
-            }
-        });
-    </script>
+    
 </body>
 </html>
