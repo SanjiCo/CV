@@ -14,58 +14,65 @@ class AutomationAgency {
         console.log("🚀 Automation Agency Engine Started");
     }
 
-    // --- n8n Webhook & Lead Capture ---
-setupN8nForm() {
-    const contactForm = document.getElementById('n8n-form');
-    if (!contactForm) return;
+    // --- n8n Webhook & Lead Capture (Güncellenmiş & Güvenli Versiyon) ---
+    setupN8nForm() {
+        const contactForm = document.getElementById('n8n-form');
+        if (!contactForm) return;
 
-    contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        const btn = contactForm.querySelector('button');
-        const originalBtnText = btn.innerHTML;
-        
-        // 1. ADIM: Arayüzü Kilitle (Tekrar basılmasını önle)
-        btn.disabled = true; // Butonu tamamen deaktif et
-        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Gönderiliyor...';
-        
-        // "Lütfen Bekleyiniz" Popup'ı göster
-        this.showNotification('Bilgileriniz işleniyor, lütfen bekleyiniz...', 'info');
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const btn = contactForm.querySelector('button');
+            const originalBtnText = btn.innerHTML;
+            
+            // 1. ADIM: Formu ve Butonu Kilitle (Mükerrer gönderimi önler)
+            btn.disabled = true;
+            btn.style.opacity = '0.6';
+            btn.style.cursor = 'not-allowed';
+            btn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Lütfen Bekleyiniz...';
+            
+            // Kullanıcıya bilgi popup'ı göster
+            this.showNotification('Talebiniz iletiliyor, lütfen sayfayı kapatmayın.', 'info');
 
-        const formData = new FormData(contactForm);
-        const data = Object.fromEntries(formData.entries());
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData.entries());
 
-        try {
-            const response = await fetch('https://n8n.ismailcakil.com/webhook/landing-lead', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    ...data,
-                    source: 'ismailcakil.com_landing',
-                    timestamp: new Date().toISOString()
-                })
-            });
+            try {
+                // n8n Webhook Adresi
+                const response = await fetch('https://n8n.ismailcakil.com/webhook/landing-lead', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        ...data,
+                        source: 'ismailcakil.com_landing',
+                        timestamp: new Date().toISOString(),
+                        browser: navigator.userAgent
+                    })
+                });
 
-            if (response.ok) {
-                // 2. ADIM: Başarı Popup'ı ve Formu Temizle
-                this.showNotification('Randevunuz başarıyla iletilmiştir!', 'success');
-                contactForm.reset();
-            } else {
-                throw new Error('Bağlantı Hatası');
+                if (response.ok) {
+                    // 2. ADIM: Başarı Durumu
+                    this.showNotification('Randevunuz başarıyla iletilmiştir!', 'success');
+                    contactForm.reset(); // Formu temizle
+                } else {
+                    throw new Error('Bağlantı Sorunu');
+                }
+            } catch (error) {
+                // 3. ADIM: Hata Durumu
+                console.error('Gönderim Hatası:', error);
+                this.showNotification('Bir sorun oluştu. Lütfen tekrar deneyin veya e-posta gönderin.', 'error');
+                btn.disabled = false; // Hata varsa butonu tekrar aç
+            } finally {
+                // İşlem tamamlansa da hata olsa da butonu eski haline getir (2 sn sonra)
+                setTimeout(() => {
+                    btn.innerHTML = originalBtnText;
+                    btn.disabled = false;
+                    btn.style.opacity = '1';
+                    btn.style.cursor = 'pointer';
+                }, 2000);
             }
-        } catch (error) {
-            console.error('Hata:', error);
-            this.showNotification('Bir hata oluştu. Lütfen tekrar deneyin.', 'error');
-            btn.disabled = false; // Hata durumunda butonu tekrar aç
-        } finally {
-            // İşlem bittiğinde (başarılı veya başarısız) butonu eski haline getir
-            setTimeout(() => {
-                btn.innerHTML = originalBtnText;
-                btn.disabled = false;
-            }, 2000);
-        }
-    });
-}
+        });
+    }
 
     // --- Modern Bildirim Sistemi ---
     showNotification(message, type = 'info') {
@@ -74,24 +81,31 @@ setupN8nForm() {
 
         const notif = document.createElement('div');
         notif.className = `notif-box notif-${type}`;
+        
+        // Renk Belirleme
+        const bgColor = type === 'success' ? '#10b981' : (type === 'error' ? '#ff4757' : '#3b82f6');
+        const icon = type === 'success' ? 'fa-check-circle' : (type === 'error' ? 'fa-exclamation-triangle' : 'fa-info-circle');
+
         notif.innerHTML = `
             <div style="display:flex; align-items:center; gap:12px;">
-                <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-triangle'}"></i>
+                <i class="fas ${icon}"></i>
                 <span>${message}</span>
             </div>
         `;
 
-        // Dinamik Stil
         notif.style.cssText = `
             position: fixed; top: 30px; right: 30px; z-index: 9999;
-            background: ${type === 'success' ? '#10b981' : '#ff4757'};
+            background: ${bgColor};
             color: white; padding: 1.2rem 2rem; border-radius: 15px;
             box-shadow: 0 15px 40px rgba(0,0,0,0.3); font-weight: 600;
             transform: translateX(150%); transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-family: sans-serif;
         `;
 
         document.body.appendChild(notif);
         setTimeout(() => notif.style.transform = 'translateX(0)', 100);
+        
+        // 5 saniye sonra kaldır
         setTimeout(() => {
             notif.style.transform = 'translateX(150%)';
             setTimeout(() => notif.remove(), 500);
@@ -183,6 +197,7 @@ setupN8nForm() {
 
     setupScrollEffects() {
         const nav = document.querySelector('.floating-nav');
+        if (!nav) return;
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
                 nav.style.background = 'rgba(10, 10, 11, 0.95)';
@@ -195,7 +210,7 @@ setupN8nForm() {
     }
 }
 
-// Başlat
+// Uygulamayı Başlat
 document.addEventListener('DOMContentLoaded', () => {
     new AutomationAgency();
 });
