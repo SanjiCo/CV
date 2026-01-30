@@ -1,236 +1,213 @@
-/* İsmail Çakıl - Professional Style Sheet
-    Updated: 2026 - Automation Agency Edition
+/* İsmail Çakıl - Professional CV Style Sheet
+    Focus: ATS Compatibility, Readability & Hybrid Career Highlighting
+    Version: 2026.1
 */
 
 :root {
-    --primary-bg: #0a0a0b;
-    --secondary-bg: #161618;
-    --accent-color: #ff4757; /* Yeni Vurgu Rengi: Otomasyon ve Aksiyon */
-    --text-main: #ffffff;
-    --text-muted: #a0a0a5;
-    --card-bg: rgba(255, 255, 255, 0.03);
-    --card-border: rgba(255, 255, 255, 0.08);
-    --nav-bg: rgba(10, 10, 11, 0.8);
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Profesyonel & Güven Veren Renk Paleti */
+    --primary-bg: #ffffff;          /* ATS uyumu için ana arka plan beyaz/açık */
+    --secondary-bg: #f8f9fa;
+    --accent-color: #2c3e50;        /* Kurumsal Lacivert/Siyah tonu */
+    --highlight: #e74c3c;           /* Aksiyon ve Önemli vurgular için Kırmızı */
+    --text-main: #2d3436;
+    --text-muted: #636e72;
+    --border-color: #dfe6e9;
+    --transition: all 0.25s ease-in-out;
+}
+
+/* Karanlık Mod Desteği (Kullanıcı tercihi veya JS için) */
+[data-theme="dark"] {
+    --primary-bg: #0f172a;
+    --secondary-bg: #1e293b;
+    --accent-color: #f8fafc;
+    --text-main: #f1f5f9;
+    --text-muted: #94a3b8;
+    --border-color: #334155;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
     scroll-behavior: smooth;
 }
 
 body {
     background-color: var(--primary-bg);
     color: var(--text-main);
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-    overflow-x: hidden;
+    font-family: 'Inter', 'Arial', sans-serif; /* ATS dostu font yedeği */
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 900px; /* Standart CV genişliği */
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
 }
 
-/* --- NAVIGATION --- */
+/* --- PROFESYONEL NAVİGASYON --- */
 .floating-nav {
     position: fixed;
-    top: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--nav-bg);
-    backdrop-filter: blur(12px);
-    padding: 0.8rem 2rem;
-    border-radius: 100px;
-    border: 1px solid var(--card-border);
+    top: 0;
+    width: 100%;
+    background: var(--primary-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 0;
     z-index: 1000;
     display: flex;
-    align-items: center;
-    gap: 2rem;
+    justify-content: center;
+    transition: var(--transition);
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
 .nav-links a {
     color: var(--text-muted);
     text-decoration: none;
     font-size: 0.9rem;
-    font-weight: 500;
-    transition: var(--transition);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .nav-links a:hover {
-    color: var(--accent-color);
+    color: var(--highlight);
 }
 
-/* --- HERO SECTION --- */
+/* --- HERO / BAŞLIK BÖLÜMÜ --- */
 .hero-section {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    padding-top: 80px;
+    padding: 120px 0 60px;
+    text-align: center;
+    background: var(--secondary-bg);
 }
-
-.hero-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    overflow: hidden;
-}
-
-.gradient-orb {
-    position: absolute;
-    filter: blur(100px);
-    opacity: 0.3;
-    border-radius: 50%;
-}
-
-.orb-1 { width: 400px; height: 400px; background: var(--accent-color); top: -10%; left: -10%; }
-.orb-2 { width: 300px; height: 300px; background: #5352ed; bottom: 10%; right: -5%; }
-
-.hero-content { text-align: center; z-index: 1; }
 
 .hero-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 4rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    background: linear-gradient(to right, #fff, #a0a0a5);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
 }
 
 .hero-subtitle {
-    font-size: 1.5rem;
-    color: var(--accent-color);
+    font-size: 1.2rem;
+    color: var(--highlight);
     font-weight: 600;
-    margin-bottom: 2rem;
-    letter-spacing: 1px;
-}
-
-/* --- SERVICE CARDS (OTOMASYON) --- */
-.skills-section { padding: 100px 0; }
-
-.section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
-}
-
-.skill-category {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    padding: 3rem 2rem;
-    border-radius: 24px;
-    transition: var(--transition);
-    text-align: center;
-}
-
-.skill-category:hover {
-    transform: translateY(-10px);
-    border-color: var(--accent-color);
-    background: rgba(255, 71, 87, 0.05);
-}
-
-.skill-category i {
-    font-size: 3rem;
-    color: var(--accent-color);
     margin-bottom: 1.5rem;
 }
 
-.skill-category h3 {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
+/* --- DENEYİM VE KRONOLOJİ (Kritik Bölüm) --- */
+.section {
+    padding: 60px 0;
+    border-bottom: 1px solid var(--border-color);
 }
 
-.skill-category p {
+.section-title {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.experience-item {
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+}
+
+.job-role {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.duration {
     color: var(--text-muted);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
-/* --- BUTTONS --- */
-.btn {
-    display: inline-block;
-    padding: 1rem 2.5rem;
-    border-radius: 100px;
-    text-decoration: none;
+.company {
+    color: var(--highlight);
     font-weight: 600;
-    transition: var(--transition);
-    cursor: pointer;
+    display: block;
+    margin-bottom: 0.8rem;
+}
+
+ul {
+    padding-left: 1.2rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* --- YETKİNLİK KARTLARI --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-category {
+    padding: 1.5rem;
+    background: var(--secondary-bg);
+    border-left: 4px solid var(--highlight);
+    border-radius: 4px;
+}
+
+/* --- FORM VE İLETİŞİM --- */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.input-field {
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: var(--primary-bg);
+    color: var(--text-main);
 }
 
 .btn-primary {
     background: var(--accent-color);
-    color: white;
+    color: #fff;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
 }
 
-.btn-primary:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(255, 71, 87, 0.3);
+.btn-primary:hover:not(:disabled) {
+    background: var(--highlight);
+    transform: translateY(-2px);
 }
 
-/* --- CONTACT FORM --- */
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    background: var(--secondary-bg);
-    padding: 3rem;
-    border-radius: 32px;
-    border: 1px solid var(--card-border);
-}
-
-.input-field {
-    width: 100%;
-    padding: 1.2rem;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--card-border);
-    border-radius: 16px;
-    color: white;
-    margin-bottom: 1.5rem;
-    font-size: 1rem;
-}
-
-.input-field:focus {
-    outline: none;
-    border-color: var(--accent-color);
+.btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
-    .hero-title { font-size: 2.5rem; }
-    .floating-nav { width: 90%; font-size: 0.8rem; }
-}
-
-/* Buton kilitlendiğinde (İşlem sürerken) */
-.btn:disabled {
-    opacity: 0.6;
-    cursor: not-allowed !important;
-    filter: grayscale(0.5);
-    transform: none !important; /* Hover efektini iptal eder */
-    box-shadow: none !important;
-}
-
-/* Bildirim kutusu (showNotification için gerekli) */
-.notif-box {
-    font-family: 'Inter', sans-serif;
-    min-width: 300px;
+    .hero-title { font-size: 2rem; }
+    .experience-header { flex-direction: column; }
+    .duration { margin-top: 0.2rem; }
+    .nav-links { gap: 1rem; font-size: 0.8rem; }
 }
