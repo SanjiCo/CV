@@ -16,7 +16,7 @@ class ProfessionalCV {
         console.log("💼 İsmail Çakıl - Professional Engine Active");
     }
 
-    // --- Kariyer Odaklı n8n Form Yönetimi ---
+    // --- Kariyer Odaklı Form Yönetimi (FormSubmit.co - Ücretsiz Altyapı) ---
     setupN8nForm() {
         const contactForm = document.getElementById('n8n-form');
         if (!contactForm) return;
@@ -27,34 +27,38 @@ class ProfessionalCV {
             const btn = contactForm.querySelector('button');
             const originalBtnText = btn.innerHTML;
             
-            // Buton ve Form Kilitleme (ATS sitelerinde profesyonel feedback önemlidir)
+            // Buton ve Form Kilitleme
             btn.disabled = true;
             btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> İletiliyor...';
             
             const formData = new FormData(contactForm);
-            const data = Object.fromEntries(formData.entries());
+            
+            // FormSubmit.co Ayarları
+            // Spam koruması için captcha'yı kapatabilir veya açık bırakabiliriz. 
+            // _template: table (varsayılan) mailde düzgün tablo olarak görünmesini sağlar.
+            formData.append("_captcha", "false"); 
+            formData.append("_template", "table");
+            formData.append("_subject", "Yeni IT Servis Talebi - ismailcakil.com");
 
             try {
-                // Sizin n8n webhook adresiniz
-                const response = await fetch('https://n8n.ismailcakil.com/webhook/landing-lead', {
+                // FormSubmit.co AJAX Endpoint
+                // İlk gönderimde e-postanıza "Activate" butonu gelecek. Tıklayınca aktif olur.
+                const response = await fetch('https://formsubmit.co/ajax/admin@ismailcakil.com', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        ...data,
-                        subject: "İletişim Formu - ismailcakil.com",
-                        timestamp: new Date().toLocaleString('tr-TR'),
-                        source: 'CV_Portfolio'
-                    })
+                    body: formData
                 });
 
-                if (response.ok) {
-                    this.showStatus('Mesajınız başarıyla iletildi. En kısa sürede döneceğim.', 'success');
+                const result = await response.json();
+
+                if (response.ok && result.success === "true") {
+                    this.showStatus('Talebiniz başarıyla alındı. En kısa sürede dönüş yapılacaktır.', 'success');
                     contactForm.reset();
                 } else {
-                    throw new Error();
+                    throw new Error('Form servisi yanıt vermedi.');
                 }
             } catch (error) {
-                this.showStatus('Bir hata oluştu. Doğrudan admin@ismailcakil.com üzerinden ulaşabilirsiniz.', 'error');
+                console.error(error);
+                this.showStatus('Bir hata oluştu. Lütfen doğrudan admin@ismailcakil.com adresine yazınız.', 'error');
             } finally {
                 setTimeout(() => {
                     btn.innerHTML = originalBtnText;

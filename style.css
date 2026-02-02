@@ -5,10 +5,13 @@
 
 :root {
     /* Profesyonel & Güven Veren Renk Paleti */
-    --primary-bg: #ffffff;          /* ATS uyumu için ana arka plan beyaz/açık */
+    --primary-bg: #ffffff;
+    /* ATS uyumu için ana arka plan beyaz/açık */
     --secondary-bg: #f8f9fa;
-    --accent-color: #2c3e50;        /* Kurumsal Lacivert/Siyah tonu */
-    --highlight: #e74c3c;           /* Aksiyon ve Önemli vurgular için Kırmızı */
+    --accent-color: #2c3e50;
+    /* Kurumsal Lacivert/Siyah tonu */
+    --highlight: #e74c3c;
+    /* Aksiyon ve Önemli vurgular için Kırmızı */
     --text-main: #2d3436;
     --text-muted: #636e72;
     --border-color: #dfe6e9;
@@ -38,13 +41,15 @@ html {
 body {
     background-color: var(--primary-bg);
     color: var(--text-main);
-    font-family: 'Inter', 'Arial', sans-serif; /* ATS dostu font yedeği */
+    font-family: 'Inter', 'Arial', sans-serif;
+    /* ATS dostu font yedeği */
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
 }
 
 .container {
-    max-width: 900px; /* Standart CV genişliği */
+    max-width: 900px;
+    /* Standart CV genişliği */
     margin: 0 auto;
     padding: 0 1.5rem;
 }
@@ -169,6 +174,27 @@ li {
 }
 
 /* --- FORM VE İLETİŞİM --- */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.social-proof-card {
+    background: var(--secondary-bg);
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    height: 100%;
+    /* Form ile aynı boyda durması için */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -181,6 +207,18 @@ li {
     border-radius: 4px;
     background: var(--primary-bg);
     color: var(--text-main);
+    width: 100%;
+    /* Mobilde taşmayı önler */
+}
+
+/* Select elementleri için özel stil */
+select.input-field {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
 }
 
 .btn-primary {
@@ -204,10 +242,39 @@ li {
     cursor: not-allowed;
 }
 
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--border-color);
+    color: var(--text-main);
+}
+
+.btn-outline:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
-    .hero-title { font-size: 2rem; }
-    .experience-header { flex-direction: column; }
-    .duration { margin-top: 0.2rem; }
-    .nav-links { gap: 1rem; font-size: 0.8rem; }
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .experience-header {
+        flex-direction: column;
+    }
+
+    .duration {
+        margin-top: 0.2rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+        font-size: 0.8rem;
+    }
+
+    /* İletişim Formu Mobilde Alt Alta */
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
 }
