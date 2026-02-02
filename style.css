@@ -173,7 +173,72 @@ li {
     border-radius: 4px;
 }
 
-/* --- FORM VE İLETİŞİM --- */
+/* --- HİZMETLERİM BÖLÜMÜ --- */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background: var(--primary-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2rem;
+    transition: var(--transition);
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    color: var(--highlight);
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.service-title {
+    font-size: 1.25rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.service-desc {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.service-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.service-list li {
+    font-size: 0.9rem;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+    padding-left: 1.2rem;
+    position: relative;
+}
+
+.service-list li::before {
+    content: "•";
+    color: var(--highlight);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* --- YETKİNLİK KARTLARI --- */
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -276,5 +341,20 @@ select.input-field {
     .contact-grid {
         grid-template-columns: 1fr;
         gap: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-links {
+        gap: 0.4rem;
+        font-size: 0.65rem;
+    }
+
+    .hero-section {
+        padding: 90px 0 40px;
+    }
+
+    .floating-nav {
+        padding: 0.8rem 0;
     }
 }
